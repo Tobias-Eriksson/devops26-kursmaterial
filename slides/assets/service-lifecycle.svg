@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 300" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- Stage boxes -->
+  <g>
+    <rect x="30"  y="70" width="150" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <rect x="212" y="70" width="150" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <rect x="394" y="70" width="150" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <rect x="576" y="70" width="150" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <rect x="758" y="70" width="150" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+    <rect x="940" y="70" width="150" height="64" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  </g>
+  <g text-anchor="middle" font-size="23" font-weight="bold" fill="#1e40af">
+    <text x="105"  y="110">Planera</text>
+    <text x="287"  y="110">Bygg</text>
+    <text x="469"  y="110">Testa</text>
+    <text x="651"  y="110">Släpp</text>
+    <text x="833"  y="110">Drift</text>
+    <text x="1015" y="110">Övervaka</text>
+  </g>
+
+  <!-- Arrows between stages -->
+  <g stroke="#1f2937" stroke-width="3">
+    <line x1="180" y1="102" x2="204" y2="102" marker-end="url(#arrow)"/>
+    <line x1="362" y1="102" x2="386" y2="102" marker-end="url(#arrow)"/>
+    <line x1="544" y1="102" x2="568" y2="102" marker-end="url(#arrow)"/>
+    <line x1="726" y1="102" x2="750" y2="102" marker-end="url(#arrow)"/>
+    <line x1="908" y1="102" x2="932" y2="102" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Session mapping under each stage -->
+  <g text-anchor="middle" font-size="17" fill="#6b7280">
+    <text x="105"  y="168">S1–S2 · Git, PR</text>
+    <text x="287"  y="168">S3 · containers</text>
+    <text x="469"  y="168">S4–S5 · pytest, CI</text>
+    <text x="651"  y="168">S6, S9 · images, CD</text>
+    <text x="833"  y="168">S7–S8 · moln, IaC</text>
+    <text x="1015" y="168">Spår A · S12</text>
+  </g>
+
+  <!-- Feedback loop -->
+  <path d="M 1015 190 L 1015 240 L 15 240 L 15 102 L 22 102" fill="none" stroke="#059669"
+        stroke-width="3" stroke-dasharray="9 7" marker-end="url(#arrow-green)"/>
+  <text x="560" y="268" text-anchor="middle" font-size="20" font-style="italic" fill="#059669">lär av produktionen — och ta nästa varv</text>
+</svg>

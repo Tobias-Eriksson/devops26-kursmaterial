@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 380" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- Phase titles -->
+  <text x="427" y="48" text-anchor="middle" font-size="24" font-weight="bold" fill="#1e40af">Grunden — M1–M9 (labbarna ÄR projektet)</text>
+  <text x="961" y="48" text-anchor="middle" font-size="24" font-weight="bold" fill="#059669">Spåret A/B/C</text>
+
+  <!-- Timeline -->
+  <line x1="40" y1="190" x2="1085" y2="190" stroke="#9ca3af" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- Dots: S1–S9 blue, S10–S12 green -->
+  <g fill="#2563eb">
+    <circle cx="70"  cy="190" r="9"/>
+    <circle cx="159" cy="190" r="9"/>
+    <circle cx="248" cy="190" r="9"/>
+    <circle cx="337" cy="190" r="9"/>
+    <circle cx="427" cy="190" r="9"/>
+    <circle cx="516" cy="190" r="9"/>
+    <circle cx="605" cy="190" r="9"/>
+    <circle cx="694" cy="190" r="9"/>
+    <circle cx="783" cy="190" r="9"/>
+  </g>
+  <g fill="#059669">
+    <circle cx="872"  cy="190" r="9"/>
+    <circle cx="961"  cy="190" r="9"/>
+    <circle cx="1050" cy="190" r="9"/>
+  </g>
+
+  <!-- Labels above (odd sessions) -->
+  <g text-anchor="middle">
+    <g font-size="17" font-weight="bold" fill="#1f2937">
+      <text x="70"  y="138">S1 · ti 8.9</text>
+      <text x="248" y="138">S3 · ti 15.9</text>
+      <text x="427" y="138">S5 · on 23.9</text>
+      <text x="605" y="138">S7 · ti 29.9</text>
+      <text x="783" y="138">S9 · to 8.10</text>
+      <text x="961" y="138">S11 · må 19.10</text>
+    </g>
+    <g font-size="17" fill="#4b5563">
+      <text x="70"  y="160">M1 repo</text>
+      <text x="248" y="160">M3 containers</text>
+      <text x="427" y="160">M5 CI</text>
+      <text x="605" y="160">M7 moln</text>
+      <text x="783" y="160">M9 CD</text>
+      <text x="961" y="160">demodag 1</text>
+    </g>
+  </g>
+
+  <!-- Labels below (even sessions) -->
+  <g text-anchor="middle">
+    <g font-size="17" font-weight="bold" fill="#1f2937">
+      <text x="159"  y="230">S2 · to 10.9</text>
+      <text x="337"  y="230">S4 · fr 18.9</text>
+      <text x="516"  y="230">S6 · fr 25.9</text>
+      <text x="694"  y="230">S8 · to 1.10</text>
+      <text x="872"  y="230">S10 · fr 9.10</text>
+      <text x="1050" y="230">S12 · ti 20.10</text>
+    </g>
+    <g font-size="17" fill="#4b5563">
+      <text x="159"  y="252">M2 PR + review</text>
+      <text x="337"  y="252">M4 tester</text>
+      <text x="516"  y="252">M6 auto-images</text>
+      <text x="694"  y="252">M8 Terraform</text>
+      <text x="872"  y="252">spårval</text>
+      <text x="1050" y="252">demodag 2</text>
+    </g>
+  </g>
+
+  <!-- Annotations -->
+  <text x="872" y="278" text-anchor="middle" font-size="15" fill="#dc2626">deadline M1–M9</text>
+  <text x="916" y="95" text-anchor="middle" font-size="15" font-style="italic" fill="#6b7280">projektvecka 12–16.10</text>
+</svg>

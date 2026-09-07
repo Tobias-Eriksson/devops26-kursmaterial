@@ -1,0 +1,31 @@
+name: Render slides
+
+on:
+  push:
+    paths:
+      - "slides/**"
+      - ".github/workflows/render-slides.yml"
+  pull_request:
+    paths:
+      - "slides/**"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Render slides to PDF
+        run: npx --yes @marp-team/marp-cli@latest -I slides -o dist/pdf --pdf --allow-local-files
+
+      - name: Render slides to PPTX
+        run: npx --yes @marp-team/marp-cli@latest -I slides -o dist/pptx --pptx --allow-local-files
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rendered-slides
+          path: dist/
