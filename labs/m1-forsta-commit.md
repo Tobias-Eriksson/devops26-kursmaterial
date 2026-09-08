@@ -47,7 +47,9 @@ Par rekommenderas (och bildas nu). Regler för par:
 ## Steg 2 – Skapa ert repo från template
 
 1. Öppna kursens template-repo: `https://github.com/Tobias-Eriksson/devops26-template`.
-2. Klicka **Use this template** → **Create a new repository**.
+2. Klicka **Use this template** → **Create a new repository**. Lämna
+   **Include all branches** avstängd (*Off*, som den är som standard) — ni
+   ska bara ha `main`; buggjaktsbranchen hämtar ni i M4 enligt den labben.
    *Inte* Fork — en fork pekar tillbaka på originalet, ett template-repo
    ger er en egen fristående historia.
 3. Owner: ditt eget konto. Namn: valfritt vettigt, t.ex. `devops-notes`.
