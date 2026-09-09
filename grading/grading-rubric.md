@@ -45,7 +45,7 @@
 | # | Milstolpe | Bevis i repot |
 |---|---|---|
 | M1 | Konton, repo från template, första commit | Repo + första push |
-| M2 | Arbetsflöde med branch protection, review | Mergad PR med review |
+| M2 | Arbetsflöde med branch protection, review | Mergad PR med review (solo: dokumenterad självgranskning i PR:en) |
 | M3 | Dockerfiles frontend+backend, compose lokalt, push GHCR | Båda images i GHCR |
 | M4 | Testsvit, utdelad bugg hittas via test | Grön testsvit |
 | M5 | Actions kör lint+test på varje PR | Grön körning i Actions |

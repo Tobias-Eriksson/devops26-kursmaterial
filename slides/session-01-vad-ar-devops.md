@@ -669,7 +669,7 @@ M1:s repo.
 **Session 2 · to 10.9 kl 09:15 — Versionshantering**
 
 Branches, merge-konflikter, pull requests, code review.
-**M2:** arbetsflöde med branch protection — par/review-buddies granskar varandras PR:ar.
+**M2:** arbetsflöde med branch protection — par granskar varandras PR:ar, solo granskar sin egen i PR:en.
 
 **Ta med:** ett fungerande M1-repo (det ni byggde idag).
 

@@ -23,7 +23,7 @@ footer: "Från commit till produktion · Referens · Git cheat sheet"
 
 ## Arbetsordningen (2/2) — review till tagg
 
-7. Buddy-review + approve
+7. Review — par: approve · solo: självgranskning + egen kommentar
 8. Merge på GitHub — radera branchen
 9. `git switch main && git pull`
 10. `git tag mX-...` — **på main, efter merge**, när milstolpen är klar
