@@ -123,8 +123,15 @@ Ny endpoint `GET /api/items/{item_id}` i `backend/app/main.py`:
 - finns itemet: returnera det
 - finns det inte: svara **404** med `Item not found` — samma mönster som
   `delete_item` några rader längre ner i filen, läs den först
-- **två nya tester** i `backend/tests/test_main.py`: ett för träffen, ett
-  för 404:an
+- **två nya tester** i `backend/tests/test_main.py`, skrivna på samma sätt
+  som de som redan finns där:
+  - *träffen*: skapa ett item med `client.post(...)` (som i
+    `test_create_and_list_item`), hämta det med
+    `client.get(f"/api/items/{created['id']}")` och kontrollera att
+    status är **200** och att `text` och `id` i svaret är samma som du
+    skapade
+  - *404:an*: `client.get("/api/items/999999")` ska ge status **404**
+    (som i `test_delete_missing_item_returns_404`)
 - branch: `add-get-item`
 
 Ungefär sex rader kod plus två korta tester. `cd backend && pytest` ska
@@ -134,12 +141,15 @@ vara grön innan du pushar.
 
 Ett färgtema som **CSS-variabler**, bara i `frontend/style.css`:
 
-- `:root { --bg; --fg; --accent }` — namnen är fria
-- använd dem: `body` får bakgrund **och** textfärg, `button` får
-  accentfärgen
+- deklarera dem en gång överst i filen, i en `:root`-regel:
+  `:root { --bg: #f4f1ea; --fg: #222; --accent: #b3541e; }` — namnen och
+  färgerna är fria, det här visar bara syntaxen
+- använd dem med `var(...)`: `body` får `background: var(--bg)` **och**
+  `color: var(--fg)`, `button` får `background: var(--accent)`
 - den hårdkodade kanten `1px solid #ddd` på `li` ska använda en variabel i
-  stället (`var(--accent)`, eller lägg till en egen `--border`)
-- inga hårdkodade färger kvar i filen
+  stället (`var(--accent)`, eller lägg till en egen `--border` i `:root`)
+- inga hårdkodade färger kvar utanför `:root` — de enda `#`-värdena i filen
+  ska stå i `:root`-regeln
 - branch: `add-color-theme`
 
 Ungefär tio rader. Kontrollera själv innan du pushar: `docker compose up
@@ -262,7 +272,7 @@ docker compose up --build -d   # vad kommandot gör: M3, nästa vecka
 
 Öppna port **8080** (codespacen visar en *Open in Browser*-knapp): är
 texten läsbar mot den nya bakgrunden, syns Add-knappen? Och i diffen: inga
-hårdkodade färger kvar, bara `style.css` ändrad. Städa efter dig:
+hårdkodade färger kvar utanför `:root`, bara `style.css` ändrad. Städa efter dig:
 
 ```bash
 docker compose down
