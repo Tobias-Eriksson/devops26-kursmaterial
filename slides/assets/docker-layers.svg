@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 520" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- ===== Panel A: bra ordning ===== -->
+  <text x="40" y="36" font-size="22" font-weight="bold" fill="#059669">Bra ordning: requirements.txt separat</text>
+
+  <!-- layer stack, top = FROM, bottom = COPY tests -->
+  <rect x="40" y="60"  width="460" height="34" fill="#e5e7eb" stroke="#9ca3af" rx="4"/>
+  <text x="55" y="82" font-size="14" fill="#374151">FROM python:3.12-slim</text>
+  <text x="480" y="82" text-anchor="end" font-size="13" fill="#059669">✓ cache</text>
+
+  <rect x="40" y="98"  width="460" height="34" fill="#e5e7eb" stroke="#9ca3af" rx="4"/>
+  <text x="55" y="120" font-size="14" fill="#374151">WORKDIR /app</text>
+  <text x="480" y="120" text-anchor="end" font-size="13" fill="#059669">✓ cache</text>
+
+  <rect x="40" y="136" width="460" height="34" fill="#e5e7eb" stroke="#9ca3af" rx="4"/>
+  <text x="55" y="158" font-size="14" fill="#374151">COPY requirements.txt .</text>
+  <text x="480" y="158" text-anchor="end" font-size="13" fill="#059669">✓ cache</text>
+
+  <rect x="40" y="174" width="460" height="46" fill="#d1fae5" stroke="#059669" stroke-width="2" rx="4"/>
+  <text x="55" y="202" font-size="14" font-weight="bold" fill="#065f46">RUN pip install -r requirements.txt</text>
+  <text x="480" y="202" text-anchor="end" font-size="13" fill="#059669">✓ cache (dyr!)</text>
+
+  <rect x="40" y="228" width="460" height="34" fill="#fed7aa" stroke="#ea580c" stroke-width="2" rx="4"/>
+  <text x="55" y="250" font-size="14" fill="#7c2d12">COPY app ./app</text>
+  <text x="480" y="250" text-anchor="end" font-size="13" fill="#ea580c">↻ byggs om</text>
+
+  <rect x="40" y="266" width="460" height="34" fill="#fed7aa" stroke="#ea580c" stroke-width="2" rx="4"/>
+  <text x="55" y="288" font-size="14" fill="#7c2d12">COPY tests ./tests</text>
+  <text x="480" y="288" text-anchor="end" font-size="13" fill="#ea580c">↻ byggs om</text>
+
+  <line x1="30" y1="222" x2="30" y2="304" stroke="#ea580c" stroke-width="3"/>
+  <text x="20" y="340" font-size="14" fill="#7c2d12">Ändrar du en rad i</text>
+  <text x="20" y="358" font-size="14" fill="#7c2d12"><tspan font-family="monospace">app/main.py</tspan> byggs</text>
+  <text x="20" y="376" font-size="14" fill="#7c2d12">bara dessa två om.</text>
+  <text x="20" y="404" font-size="14" font-weight="bold" fill="#065f46">pip install körs INTE om.</text>
+
+  <!-- divider -->
+  <line x1="555" y1="20" x2="555" y2="500" stroke="#e5e7eb" stroke-width="2"/>
+
+  <!-- ===== Panel B: fallgropen ===== -->
+  <text x="580" y="36" font-size="22" font-weight="bold" fill="#dc2626">Fallgropen: COPY allt först</text>
+
+  <rect x="580" y="60"  width="460" height="34" fill="#e5e7eb" stroke="#9ca3af" rx="4"/>
+  <text x="595" y="82" font-size="14" fill="#374151">FROM python:3.12-slim</text>
+  <text x="1020" y="82" text-anchor="end" font-size="13" fill="#059669">✓ cache</text>
+
+  <rect x="580" y="98"  width="460" height="34" fill="#e5e7eb" stroke="#9ca3af" rx="4"/>
+  <text x="595" y="120" font-size="14" fill="#374151">WORKDIR /app</text>
+  <text x="1020" y="120" text-anchor="end" font-size="13" fill="#059669">✓ cache</text>
+
+  <rect x="580" y="136" width="460" height="34" fill="#fed7aa" stroke="#ea580c" stroke-width="2" rx="4"/>
+  <text x="595" y="158" font-size="14" fill="#7c2d12">COPY . .  (kod + requirements.txt)</text>
+  <text x="1020" y="158" text-anchor="end" font-size="13" fill="#ea580c">↻ byggs om</text>
+
+  <rect x="580" y="174" width="460" height="46" fill="#fecaca" stroke="#dc2626" stroke-width="2" rx="4"/>
+  <text x="595" y="202" font-size="14" font-weight="bold" fill="#7f1d1d">RUN pip install -r requirements.txt</text>
+  <text x="1020" y="202" text-anchor="end" font-size="13" fill="#dc2626">↻ byggs om</text>
+
+  <line x1="570" y1="130" x2="570" y2="224" stroke="#dc2626" stroke-width="3"/>
+  <text x="580" y="260" font-size="14" fill="#7f1d1d">Ändrar du en rad i</text>
+  <text x="580" y="278" font-size="14" fill="#7f1d1d"><tspan font-family="monospace">app/main.py</tspan> ogiltigförklaras</text>
+  <text x="580" y="296" font-size="14" fill="#7f1d1d"><tspan font-family="monospace">COPY . .</tspan> — och allt EFTER den.</text>
+  <text x="580" y="324" font-size="14" font-weight="bold" fill="#7f1d1d">pip install körs om. Varje gång.</text>
+  <text x="580" y="342" font-size="14" fill="#7f1d1d">Även om requirements.txt inte rörts.</text>
+</svg>
