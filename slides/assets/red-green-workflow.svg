@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowdark2" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/>
+    </marker>
+    <marker id="arrowgray2" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <text x="560" y="40" text-anchor="middle" font-size="18" fill="#6b7280">testet kommer före fixen, varje gång</text>
+
+  <!-- Step 1: Röd -->
+  <rect x="40" y="95" width="290" height="110" rx="12" fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
+  <text x="185" y="130" text-anchor="middle" font-size="24" font-weight="bold" fill="#7f1d1d">Röd</text>
+  <text x="185" y="158" text-anchor="middle" font-size="15" fill="#7f1d1d">skriv ett test som beskriver</text>
+  <text x="185" y="178" text-anchor="middle" font-size="15" fill="#7f1d1d">vad koden SKA göra</text>
+  <text x="185" y="196" text-anchor="middle" font-size="13" font-style="italic" fill="#991b1b">kör det — se det faila</text>
+
+  <!-- Step 2: Grön -->
+  <rect x="415" y="95" width="290" height="110" rx="12" fill="#d1fae5" stroke="#059669" stroke-width="3"/>
+  <text x="560" y="130" text-anchor="middle" font-size="24" font-weight="bold" fill="#065f46">Grön</text>
+  <text x="560" y="158" text-anchor="middle" font-size="15" fill="#065f46">skriv minsta möjliga kod</text>
+  <text x="560" y="178" text-anchor="middle" font-size="15" fill="#065f46">för att testet ska passera</text>
+  <text x="560" y="196" text-anchor="middle" font-size="13" font-style="italic" fill="#047857">kör om — se det gå grönt</text>
+
+  <!-- Step 3: Refaktorera -->
+  <rect x="790" y="95" width="290" height="110" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="935" y="130" text-anchor="middle" font-size="24" font-weight="bold" fill="#1e40af">Refaktorera</text>
+  <text x="935" y="158" text-anchor="middle" font-size="15" fill="#1f2937">städa koden</text>
+  <text x="935" y="178" text-anchor="middle" font-size="15" fill="#1f2937">testerna förblir gröna</text>
+  <text x="935" y="196" text-anchor="middle" font-size="13" font-style="italic" fill="#1e40af">hela tiden, som ett skyddsnät</text>
+
+  <!-- Flow arrows -->
+  <line x1="330" y1="150" x2="405" y2="150" stroke="#1f2937" stroke-width="3" marker-end="url(#arrowdark2)"/>
+  <line x1="705" y1="150" x2="780" y2="150" stroke="#1f2937" stroke-width="3" marker-end="url(#arrowdark2)"/>
+
+  <!-- Loop back to next requirement -->
+  <path d="M 935 220 C 935 345 185 345 185 228" fill="none" stroke="#9ca3af" stroke-width="3" stroke-dasharray="9 7" marker-end="url(#arrowgray2)"/>
+  <text x="560" y="375" text-anchor="middle" font-size="16" font-style="italic" fill="#6b7280">nästa krav → nytt test → ny röd</text>
+</svg>
