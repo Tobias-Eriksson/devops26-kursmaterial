@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 480" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowci" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Outer: Workflow ===== -->
+  <rect x="30" y="55" width="1060" height="395" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="55" y="90" font-size="22" font-weight="bold" fill="#1e40af">Workflow — .github/workflows/ci.yml</text>
+
+  <!-- trigger badge -->
+  <rect x="790" y="68" width="270" height="36" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="925" y="91" text-anchor="middle" font-size="13" font-family="Menlo, monospace" fill="#1e40af">on: pull_request → main</text>
+
+  <!-- ===== Inner: Job ===== -->
+  <rect x="65" y="115" width="990" height="290" rx="14" fill="#fffbeb" stroke="#d97706" stroke-width="3"/>
+  <text x="90" y="148" font-size="19" font-weight="bold" fill="#92400e">Job: lint-and-test</text>
+  <text x="90" y="171" font-size="14" font-style="italic" fill="#92400e" font-family="Menlo, monospace">name: "Lint and test backend"</text>
+
+  <!-- runner badge -->
+  <rect x="790" y="128" width="240" height="36" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="910" y="151" text-anchor="middle" font-size="13" fill="#92400e">runner: ubuntu-latest</text>
+
+  <!-- ===== Steps ===== -->
+  <text x="90" y="205" font-size="15" fill="#78350f">Steg — körs i ordning, ett i taget:</text>
+
+  <!-- Step 1: checkout -->
+  <rect x="90" y="225" width="160" height="95" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="170" y="255" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">checkout</text>
+  <text x="170" y="278" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#4b5563">actions/</text>
+  <text x="170" y="292" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#4b5563">checkout@v4</text>
+
+  <!-- Step 2: setup-python -->
+  <rect x="276" y="225" width="160" height="95" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="356" y="255" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">setup-python</text>
+  <text x="356" y="278" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#4b5563">actions/setup-</text>
+  <text x="356" y="292" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#4b5563">python@v5</text>
+
+  <!-- Step 3: install deps -->
+  <rect x="462" y="225" width="160" height="95" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="542" y="255" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">install deps</text>
+  <text x="542" y="280" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#4b5563">pip install -r</text>
+  <text x="542" y="294" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#4b5563">requirements.txt</text>
+
+  <!-- Step 4: ruff check (gate) -->
+  <rect x="648" y="225" width="160" height="95" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="728" y="255" text-anchor="middle" font-size="15" font-weight="bold" fill="#7c2d12">Lint (ruff)</text>
+  <text x="728" y="280" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#7c2d12">ruff check .</text>
+  <text x="728" y="300" text-anchor="middle" font-size="10.5" fill="#9a3412">kan bli röd</text>
+
+  <!-- Step 5: pytest (gate) -->
+  <rect x="834" y="225" width="160" height="95" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="914" y="255" text-anchor="middle" font-size="15" font-weight="bold" fill="#7c2d12">Test (pytest)</text>
+  <text x="914" y="280" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#7c2d12">pytest</text>
+  <text x="914" y="300" text-anchor="middle" font-size="10.5" fill="#9a3412">kan bli röd</text>
+
+  <!-- arrows between steps -->
+  <line x1="250" y1="272" x2="272" y2="272" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowci)"/>
+  <line x1="436" y1="272" x2="458" y2="272" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowci)"/>
+  <line x1="622" y1="272" x2="644" y2="272" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowci)"/>
+  <line x1="808" y1="272" x2="830" y2="272" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowci)"/>
+
+  <text x="90" y="345" font-size="14" font-weight="bold" fill="#7c2d12">Ett steg som failar (icke-noll exit code) → hela jobbet blir rött, resten avbryts.</text>
+  <text x="90" y="368" font-size="13" font-style="italic" fill="#78350f">Runnern är en FÄRSK VM varje körning — inget sparas mellan körningar förutom det checkout hämtar.</text>
+
+  <text x="55" y="420" font-size="15" fill="#1e40af">Hierarki: <tspan font-weight="bold">workflow</tspan> innehåller en eller flera <tspan font-weight="bold">jobb</tspan>, varje jobb kör sina <tspan font-weight="bold">steg</tspan> i ordning på en egen <tspan font-weight="bold">runner</tspan>.</text>
+</svg>
