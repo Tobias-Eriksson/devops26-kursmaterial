@@ -280,19 +280,35 @@ den workflown själva och äger den.
 
 > 📸 **Kom ihåg skärmdump till inlämningen:** **Versions**-fliken för ett av paketen, med er egen `:latest`-push och dess färska tidsstämpel synlig.
 
-## Steg 6 – Tagga milstolpen
+## Steg 6 – Lämna in beviset och tagga milstolpen
+
+**Bevisa det osynliga:** er `docker compose up`-körning och era
+paket på GHCR syns inte i repot. Ni har nu 4 skärmdumpar från steg 1, 3,
+4 och 5 — lägg dem i `inlamning/` och skriv några meningar per skärmdump
+i `inlamning/m3-container.md`, tillsammans med gissningarna från steg 1
+— formatet visas i `inlamning/m0-exempel.md`.
+
+`main` är skyddad sedan M2, så även beviset går in via en PR:
+
+```bash
+git switch main && git pull
+git switch -c m3-inlamning
+git add inlamning/
+git commit -m "docs: add M3 proof"
+git push -u origin m3-inlamning
+```
+
+Öppna PR:en, granska (par: buddyn / solo: radkommentar), merga,
+**Delete branch**.
+
+**Kontrollera på GitHub** att `inlamning/m3-container.md` ligger på `main` —
+tagga då:
 
 ```bash
 git switch main && git pull
 git tag m3-container
 git push origin m3-container
 ```
-
-**Bevisa det osynliga:** er `docker compose up`-körning och era
-paket på GHCR syns inte i repot. Ni har nu 4 skärmdumpar från steg 1, 3,
-4 och 5 — lägg dem i `inlamning/` och skriv några meningar per skärmdump
-i `inlamning/m3-container.md`, tillsammans med gissningarna från steg 1,
-och committa — formatet visas i `inlamning/m0-exempel.md`.
 
 ## Verifiera
 
@@ -307,7 +323,7 @@ Klart betyder att allt det här stämmer:
 - [ ] Er egen `:latest`-push syns med färsk tidsstämpel under **Versions**
       för båda paketen under **Packages** på GitHub.
 - [ ] Taggen `m3-container` syns under **Tags**.
-- [ ] Det osynliga arbetet är dokumenterat i `inlamning/m3-container.md`.
+- [ ] Det osynliga arbetet är dokumenterat i `inlamning/m3-container.md`, mergat till `main`.
 
 ## Vanliga problem
 

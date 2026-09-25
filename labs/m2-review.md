@@ -428,21 +428,37 @@ lös konflikten i den andra enligt punkt 5–6.
 
 > 📸 **Kom ihåg skärmdump till inlämningen:** GitHubs "This branch has conflicts"-banner innan ni löser den, och/eller terminalens `CONFLICT`-rad.
 
-## Steg 6 – Tagga milstolpen
+## Steg 6 – Lämna in beviset och tagga milstolpen
+
+**Bevisa det osynliga:** branch protection-inställningarna och testet där
+pushen till `main` avvisades syns inte i repot. Ni har nu 4 skärmdumpar
+från steg 1, 2, 4 och 5 — lägg dem i `inlamning/` och skriv några
+meningar per skärmdump i `inlamning/m2-review.md` — formatet
+visas i `inlamning/m0-exempel.md`. **Solo:** nämn där att du körde med
+*Required approvals* **0** och länka din PR — självgranskningen
+(beskrivning + radkommentar) är det som ersätter buddyns godkännande.
+
+`main` är skyddad sedan M2, så även beviset går in via en PR:
+
+```bash
+git switch main && git pull
+git switch -c m2-inlamning
+git add inlamning/
+git commit -m "docs: add M2 proof"
+git push -u origin m2-inlamning
+```
+
+Öppna PR:en, granska (par: buddyn / solo: radkommentar), merga,
+**Delete branch**.
+
+**Kontrollera på GitHub** att `inlamning/m2-review.md` ligger på `main` —
+tagga då:
 
 ```bash
 git switch main && git pull
 git tag m2-review
 git push origin m2-review
 ```
-
-**Bevisa det osynliga:** branch protection-inställningarna och testet där
-pushen till `main` avvisades syns inte i repot. Ni har nu 4 skärmdumpar
-från steg 1, 2, 4 och 5 — lägg dem i `inlamning/` och skriv några
-meningar per skärmdump i `inlamning/m2-review.md` och committa, formatet
-visas i `inlamning/m0-exempel.md`. **Solo:** nämn där att du körde med
-*Required approvals* **0** och länka din PR — självgranskningen
-(beskrivning + radkommentar) är det som ersätter buddyns godkännande.
 
 ## Verifiera
 
@@ -457,7 +473,7 @@ Klart betyder att allt det här stämmer:
       tyst, och rubriken i appen är den kombinerade.
 - [ ] Mergade brancher är raderade på GitHub (*Branches*-sidan är ren).
 - [ ] Taggen `m2-review` syns under **Tags** på GitHub.
-- [ ] Det osynliga arbetet är dokumenterat i `inlamning/m2-review.md`.
+- [ ] Det osynliga arbetet är dokumenterat i `inlamning/m2-review.md`, mergat till `main`.
 
 ## Vanliga problem
 

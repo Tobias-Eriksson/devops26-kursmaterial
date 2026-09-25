@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowtag" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Outer: GHCR package ===== -->
+  <rect x="500" y="20" width="590" height="380" rx="16" fill="#f9fafb" stroke="#6b7280" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="525" y="48" font-size="17" font-weight="bold" fill="#374151">GHCR-paket: ghcr.io/&lt;ägare&gt;/template-app-backend</text>
+
+  <!-- ===== Lane 1: commit abc123 ===== -->
+  <rect x="30" y="70" width="190" height="64" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="125" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">Commit abc123</text>
+  <text x="125" y="118" text-anchor="middle" font-size="12" fill="#4b5563">mergas till main</text>
+
+  <line x1="220" y1="102" x2="246" y2="102" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowtag)"/>
+
+  <rect x="248" y="70" width="170" height="64" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+  <text x="333" y="96" text-anchor="middle" font-size="13" font-weight="bold" fill="#7c2d12">CI: docker build</text>
+  <text x="333" y="118" text-anchor="middle" font-size="12" fill="#7c2d12">+ push (M6)</text>
+
+  <line x1="418" y1="102" x2="543" y2="102" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowtag)"/>
+
+  <rect x="545" y="70" width="150" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="620" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">image</text>
+  <text x="620" y="118" text-anchor="middle" font-size="10.5" fill="#1e40af">(sha256-innehåll)</text>
+
+  <line x1="600" y1="134" x2="610" y2="150" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="640" y1="134" x2="725" y2="150" stroke="#1f2937" stroke-width="1.5"/>
+
+  <rect x="560" y="150" width="100" height="34" rx="7" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="610" y="172" text-anchor="middle" font-family="Menlo, monospace" font-size="13" font-weight="bold" fill="#1e40af">:abc123</text>
+
+  <rect x="675" y="150" width="100" height="34" rx="7" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+  <text x="725" y="172" text-anchor="middle" font-size="13" font-weight="bold" fill="#6b7280">latest</text>
+
+  <text x="610" y="200" text-anchor="middle" font-size="10.5" fill="#1e40af">frusen för alltid</text>
+  <text x="725" y="200" text-anchor="middle" font-size="10.5" fill="#6b7280">…tills nästa merge</text>
+
+  <!-- ===== Lane 2: commit def456 ===== -->
+  <rect x="30" y="250" width="190" height="64" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="125" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">Commit def456</text>
+  <text x="125" y="298" text-anchor="middle" font-size="12" fill="#4b5563">nästa merge till main</text>
+
+  <line x1="220" y1="282" x2="246" y2="282" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowtag)"/>
+
+  <rect x="248" y="250" width="170" height="64" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+  <text x="333" y="276" text-anchor="middle" font-size="13" font-weight="bold" fill="#7c2d12">CI: docker build</text>
+  <text x="333" y="298" text-anchor="middle" font-size="12" fill="#7c2d12">+ push (M6)</text>
+
+  <line x1="418" y1="282" x2="543" y2="282" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowtag)"/>
+
+  <rect x="545" y="250" width="150" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="620" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">image</text>
+  <text x="620" y="298" text-anchor="middle" font-size="10.5" fill="#1e40af">(nytt sha256)</text>
+
+  <line x1="600" y1="314" x2="610" y2="330" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="640" y1="314" x2="725" y2="330" stroke="#1f2937" stroke-width="1.5"/>
+
+  <rect x="560" y="330" width="100" height="34" rx="7" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+  <text x="610" y="352" text-anchor="middle" font-family="Menlo, monospace" font-size="13" font-weight="bold" fill="#1e40af">:def456</text>
+
+  <rect x="675" y="330" width="100" height="34" rx="7" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="725" y="352" text-anchor="middle" font-size="13" font-weight="bold" fill="#065f46">latest</text>
+
+  <text x="610" y="380" text-anchor="middle" font-size="10.5" fill="#1e40af">frusen för alltid</text>
+  <text x="725" y="380" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#065f46">gäller NU</text>
+
+  <!-- latest moves from lane 1 to lane 2 -->
+  <line x1="725" y1="185" x2="725" y2="326" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrowtag)"/>
+  <text x="800" y="250" font-size="11" fill="#6b7280">latest</text>
+  <text x="800" y="264" font-size="11" fill="#6b7280">flyttas hit</text>
+
+  <!-- ===== Legend ===== -->
+  <text x="40" y="440" font-size="14" fill="#1e40af">sha-taggen (<tspan font-family="Menlo, monospace">:abc123</tspan>, <tspan font-family="Menlo, monospace">:def456</tspan>) är permanent — pekar för alltid på EXAKT den commiten.</text>
+  <text x="40" y="465" font-size="14" fill="#374151">latest flyttas vid varje merge — bekvämt, men fel val om ni vill återskapa ett exakt förflutet läge.</text>
+</svg>
