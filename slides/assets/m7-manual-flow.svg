@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowm7" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Outer container ===== -->
+  <rect x="30" y="50" width="1060" height="260" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="55" y="85" font-size="20" font-weight="bold" fill="#1e40af">M7 — manuellt, klick för klick</text>
+
+  <!-- Step 1: VM -->
+  <rect x="75" y="130" width="150" height="110" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="150" y="163" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">VM</text>
+  <text x="150" y="185" text-anchor="middle" font-size="11" fill="#4b5563">launch instance:</text>
+  <text x="150" y="200" text-anchor="middle" font-size="11" fill="#4b5563">image + flavor</text>
+  <text x="150" y="222" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7280">+ keypair vid start</text>
+
+  <!-- Step 2: Security group -->
+  <rect x="239" y="130" width="150" height="110" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="314" y="163" text-anchor="middle" font-size="14" font-weight="bold" fill="#7c2d12">Security group</text>
+  <text x="314" y="185" text-anchor="middle" font-size="11" fill="#7c2d12">öppna port</text>
+  <text x="314" y="200" text-anchor="middle" font-size="11" fill="#7c2d12">22 + 8080</text>
+  <text x="314" y="222" text-anchor="middle" font-size="10" font-style="italic" fill="#9a3412">Ingress, ej Egress</text>
+
+  <!-- Step 3: Floating IP -->
+  <rect x="403" y="130" width="150" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="478" y="163" text-anchor="middle" font-size="14" font-weight="bold" fill="#065f46">Floating IP</text>
+  <text x="478" y="185" text-anchor="middle" font-size="11" fill="#065f46">associera med</text>
+  <text x="478" y="200" text-anchor="middle" font-size="11" fill="#065f46">instansen</text>
+  <text x="478" y="222" text-anchor="middle" font-size="10" font-style="italic" fill="#065f46">nu publikt nåbar</text>
+
+  <!-- Step 4: SSH + Docker -->
+  <rect x="567" y="130" width="150" height="110" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="642" y="163" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">SSH in</text>
+  <text x="642" y="185" text-anchor="middle" font-size="11" fill="#4b5563">installera Docker</text>
+  <text x="642" y="200" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#4b5563">get.docker.com</text>
+
+  <!-- Step 5: Pull + run -->
+  <rect x="731" y="130" width="150" height="110" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="806" y="163" text-anchor="middle" font-size="14" font-weight="bold" fill="#7c2d12">Pull + run</text>
+  <text x="806" y="185" text-anchor="middle" font-size="11" fill="#7c2d12">images från GHCR</text>
+  <text x="806" y="200" text-anchor="middle" font-size="11" fill="#7c2d12">docker compose up</text>
+  <text x="806" y="222" text-anchor="middle" font-size="10" font-style="italic" fill="#9a3412">kräver publika paket</text>
+
+  <!-- Step 6: App svarar -->
+  <rect x="895" y="130" width="150" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="970" y="163" text-anchor="middle" font-size="14" font-weight="bold" fill="#065f46">Appen svarar</text>
+  <text x="970" y="185" text-anchor="middle" font-size="11" fill="#065f46">floating-IP / nip.io</text>
+  <text x="970" y="200" text-anchor="middle" font-size="11" fill="#065f46">M7 klar</text>
+
+  <!-- Arrows between steps -->
+  <line x1="225" y1="185" x2="235" y2="185" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowm7)"/>
+  <line x1="389" y1="185" x2="399" y2="185" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowm7)"/>
+  <line x1="553" y1="185" x2="563" y2="185" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowm7)"/>
+  <line x1="717" y1="185" x2="727" y2="185" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowm7)"/>
+  <line x1="881" y1="185" x2="891" y2="185" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowm7)"/>
+
+  <text x="55" y="278" font-size="13" fill="#374151">Varje pil ovan är minst ett klick i webbkonsolen — inget sparas som kod idag.</text>
+
+  <!-- ===== M8 teaser ===== -->
+  <line x1="970" y1="240" x2="970" y2="325" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrowm7)"/>
+  <rect x="640" y="330" width="440" height="80" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="860" y="358" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">S8 (om två dagar / to 1.10): terraform apply</text>
+  <text x="860" y="380" text-anchor="middle" font-size="12" fill="#1e40af">gör steg 1–5 automatiskt, floating IP:n återanvänds</text>
+
+  <text x="55" y="425" font-size="13" font-style="italic" fill="#374151">Kom ihåg varenda klick idag — om två dagar jämför ni det mot en Terraform-fil.</text>
+</svg>

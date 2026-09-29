@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 460" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowos" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Inputs: Image + Flavor ===== -->
+  <rect x="30" y="55" width="220" height="90" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="140" y="88" text-anchor="middle" font-size="16" font-weight="bold" fill="#374151">Image</text>
+  <text x="140" y="110" text-anchor="middle" font-size="12" fill="#4b5563">mallen (t.ex. Ubuntu 24.04)</text>
+  <text x="140" y="128" text-anchor="middle" font-size="11" font-style="italic" fill="#6b7280">valt en gång, vid start</text>
+
+  <rect x="30" y="315" width="220" height="90" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="140" y="348" text-anchor="middle" font-size="16" font-weight="bold" fill="#374151">Flavor</text>
+  <text x="140" y="370" text-anchor="middle" font-size="12" fill="#4b5563">storleken: CPU / RAM / disk</text>
+  <text x="140" y="388" text-anchor="middle" font-size="11" font-style="italic" fill="#6b7280">valt en gång, vid start</text>
+
+  <!-- ===== Central: Instance ===== -->
+  <rect x="420" y="165" width="260" height="120" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="550" y="205" text-anchor="middle" font-size="19" font-weight="bold" fill="#1e40af">Instance</text>
+  <text x="550" y="228" text-anchor="middle" font-size="13" fill="#1e40af">den körande VM:en</text>
+  <text x="550" y="250" text-anchor="middle" font-size="12" font-style="italic" fill="#1e40af">image + flavor kombinerat</text>
+  <text x="550" y="270" text-anchor="middle" font-size="12" fill="#1e40af">= det ni faktiskt kör</text>
+
+  <line x1="250" y1="100" x2="415" y2="205" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowos)"/>
+  <line x1="250" y1="360" x2="415" y2="250" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowos)"/>
+
+  <!-- ===== Keypair (below, injected at launch only) ===== -->
+  <rect x="460" y="345" width="180" height="90" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <text x="550" y="378" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">Keypair</text>
+  <text x="550" y="400" text-anchor="middle" font-size="11.5" fill="#4b5563">er publika SSH-nyckel</text>
+  <text x="550" y="417" text-anchor="middle" font-size="10.5" font-style="italic" fill="#9a3412">bara vid start — ej i efterhand</text>
+
+  <line x1="550" y1="345" x2="550" y2="287" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowos)"/>
+
+  <!-- ===== Security group (firewall, attached) ===== -->
+  <rect x="800" y="55" width="280" height="115" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <text x="940" y="88" text-anchor="middle" font-size="16" font-weight="bold" fill="#7c2d12">Security group</text>
+  <text x="940" y="110" text-anchor="middle" font-size="12" fill="#7c2d12">brandvägg — allt blockerat</text>
+  <text x="940" y="126" text-anchor="middle" font-size="12" fill="#7c2d12">som standard, ni öppnar portar</text>
+  <text x="940" y="146" text-anchor="middle" font-size="11" font-style="italic" fill="#9a3412">redigerbar när som helst</text>
+
+  <line x1="800" y1="120" x2="685" y2="205" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowos)"/>
+
+  <!-- ===== Floating IP (public reachability) ===== -->
+  <rect x="800" y="300" width="280" height="115" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <text x="940" y="333" text-anchor="middle" font-size="16" font-weight="bold" fill="#065f46">Floating IP</text>
+  <text x="940" y="355" text-anchor="middle" font-size="12" fill="#065f46">den publika adressen</text>
+  <text x="940" y="371" text-anchor="middle" font-size="12" fill="#065f46">kopplas EFTER att VM:en startat</text>
+  <text x="940" y="391" text-anchor="middle" font-size="11" font-style="italic" fill="#065f46">utan den: bara nåbar internt</text>
+
+  <line x1="800" y1="358" x2="685" y2="255" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowos)"/>
+
+  <!-- ===== Legend ===== -->
+  <text x="30" y="450" font-size="13" fill="#374151">Sex begrepp, samma idé i alla molnleverantörer — bara olika namn (nästa slide).</text>
+</svg>
