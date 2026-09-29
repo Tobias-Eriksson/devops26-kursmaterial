@@ -20,10 +20,10 @@ jobs:
           node-version: "20"
 
       - name: Render slides to PDF
-        run: npx --yes @marp-team/marp-cli@latest -I slides -o dist/pdf --pdf --allow-local-files
+        run: npx --yes @marp-team/marp-cli@latest -I slides -o dist/pdf --pdf --allow-local-files --browser-timeout 120 -P 2
 
       - name: Render slides to PPTX
-        run: npx --yes @marp-team/marp-cli@latest -I slides -o dist/pptx --pptx --allow-local-files
+        run: npx --yes @marp-team/marp-cli@latest -I slides -o dist/pptx --pptx --allow-local-files --browser-timeout 120 -P 2
 
       - uses: actions/upload-artifact@v4
         with:
