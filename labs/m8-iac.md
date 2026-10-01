@@ -165,7 +165,10 @@ Redigera `terraform.tfvars`:
   Network → Networks** (exakt menytext kan skilja sig mot vad ni ser).
 - `ghcr_owner` — samma gemena namn som `.github/workflows/publish-images.yml`
   publicerar era images under: det ni skrev som `<ert-användarnamn>` i
-  M3/M6 och i image-sökvägen i M7:s `docker-compose.yml`.
+  M3/M6 och i image-sökvägen i M7:s `docker-compose.yml`. **OBS: skriv
+  användarnamnet med små bokstäver** även om det har versaler på GitHub —
+  annars avvisar Docker image-sökvägen (`repository name must be
+  lowercase`, se felsökningen längst ned).
 - `instance_name` — sätt till `m8-<förnamn>`, samma namnkonvention som
   M7:s instansnamn. Då ser ni direkt i Horizon vilken VM, security group
   och keypair som är vems, bredvid M7:s handbyggda. Med default-värdet
