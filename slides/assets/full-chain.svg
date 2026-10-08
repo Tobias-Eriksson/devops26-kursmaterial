@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 545" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrowfc" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#1f2937"/>
+    </marker>
+    <marker id="arrowfcdash" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Row labels ===== -->
+  <text x="55" y="30" font-size="18" font-weight="bold" fill="#1e40af">CI — kod till registry (S2, S5, S6)</text>
+  <text x="55" y="255" font-size="18" font-weight="bold" fill="#7c2d12">CD — registry till produktion (S9)</text>
+
+  <!-- ===== Row 1: CI ===== -->
+
+  <!-- b1: commit + push -->
+  <rect x="55" y="50" width="230" height="110" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <rect x="235" y="58" width="42" height="24" rx="6" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="256" y="75" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">S1–2</text>
+  <text x="170" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">Commit + push</text>
+  <text x="170" y="120" text-anchor="middle" font-size="11" fill="#4b5563">egen branch</text>
+  <text x="170" y="136" text-anchor="middle" font-size="11" fill="#4b5563">öppnar PR</text>
+
+  <!-- b2: PR + review -->
+  <rect x="315" y="50" width="230" height="110" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <rect x="495" y="58" width="30" height="24" rx="6" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="510" y="75" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">S2</text>
+  <text x="430" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">PR + review</text>
+  <text x="430" y="120" text-anchor="middle" font-size="11" fill="#4b5563">branch protection</text>
+  <text x="430" y="136" text-anchor="middle" font-size="11" fill="#4b5563">kräver godkännande</text>
+
+  <!-- b3: CI lint+test (gate) -->
+  <rect x="575" y="50" width="230" height="110" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+  <rect x="755" y="58" width="30" height="24" rx="6" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="770" y="75" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">S5</text>
+  <text x="690" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#7c2d12">CI: lint + test</text>
+  <text x="690" y="120" text-anchor="middle" font-size="11" fill="#7c2d12">required status check</text>
+  <text x="690" y="136" text-anchor="middle" font-size="10.5" font-style="italic" fill="#9a3412">röd blockerar merge</text>
+
+  <!-- b4: merge -> build+publish -->
+  <rect x="835" y="50" width="230" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <rect x="1015" y="58" width="30" height="24" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+  <text x="1030" y="75" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">S6</text>
+  <text x="950" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#065f46">Merge → main</text>
+  <text x="950" y="120" text-anchor="middle" font-size="11" fill="#065f46">CI bygger + pushar</text>
+  <text x="950" y="136" text-anchor="middle" font-size="11" fill="#065f46">images till GHCR</text>
+
+  <!-- arrows row1 -->
+  <line x1="285" y1="105" x2="311" y2="105" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowfc)"/>
+  <line x1="545" y1="105" x2="571" y2="105" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowfc)"/>
+  <line x1="805" y1="105" x2="831" y2="105" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowfc)"/>
+
+  <!-- elbow connector: b4 (GHCR) down to b5 (workflow_run) — routed below
+       the row-2 label (y=255) so the line never crosses the label text -->
+  <path d="M950,160 V270 H170 V296" fill="none" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowfc)"/>
+  <text x="960" y="185" font-size="11" font-style="italic" fill="#4b5563">images i GHCR</text>
+
+  <!-- ===== Row 2: CD ===== -->
+
+  <!-- b5: workflow_run trigger -->
+  <rect x="55" y="300" width="230" height="110" rx="10" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <rect x="235" y="308" width="30" height="24" rx="6" fill="#ffffff" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="250" y="325" text-anchor="middle" font-size="12" font-weight="bold" fill="#374151">S9</text>
+  <text x="170" y="348" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">workflow_run</text>
+  <text x="170" y="370" text-anchor="middle" font-size="11" font-family="Menlo, monospace" fill="#4b5563">"Publish images"</text>
+  <text x="170" y="386" text-anchor="middle" font-size="11" fill="#4b5563">completed → success</text>
+
+  <!-- b6: SSH deploy -->
+  <rect x="315" y="300" width="230" height="110" rx="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/>
+  <rect x="495" y="308" width="30" height="24" rx="6" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="510" y="325" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c2d12">S9</text>
+  <text x="430" y="348" text-anchor="middle" font-size="15" font-weight="bold" fill="#7c2d12">SSH deploy</text>
+  <text x="430" y="370" text-anchor="middle" font-size="10.5" font-family="Menlo, monospace" fill="#7c2d12">pull &amp;&amp; up -d</text>
+  <text x="430" y="386" text-anchor="middle" font-size="10.5" font-style="italic" fill="#9a3412">dedikerad deploy-nyckel</text>
+
+  <!-- b7: produktion -->
+  <rect x="575" y="300" width="230" height="110" rx="10" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <rect x="755" y="308" width="30" height="24" rx="6" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+  <text x="770" y="325" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46">S9</text>
+  <text x="690" y="348" text-anchor="middle" font-size="15" font-weight="bold" fill="#065f46">Produktion</text>
+  <text x="690" y="370" text-anchor="middle" font-size="11" fill="#065f46">appen svarar på</text>
+  <text x="690" y="386" text-anchor="middle" font-size="11" fill="#065f46">floating-IP/nip.io</text>
+
+  <!-- b8: tag m9-cd, chain complete -->
+  <rect x="835" y="298" width="230" height="114" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="3"/>
+  <text x="950" y="335" text-anchor="middle" font-size="16" font-weight="bold" fill="#854d0e">Kedjan klar</text>
+  <text x="950" y="358" text-anchor="middle" font-size="12" font-family="Menlo, monospace" fill="#854d0e">git tag m9-cd</text>
+  <text x="950" y="378" text-anchor="middle" font-size="10.5" fill="#854d0e">merge → main</text>
+  <text x="950" y="393" text-anchor="middle" font-size="10.5" fill="#854d0e">= ny version live</text>
+
+  <!-- arrows row2 -->
+  <line x1="285" y1="355" x2="311" y2="355" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowfc)"/>
+  <line x1="545" y1="355" x2="571" y2="355" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowfc)"/>
+  <line x1="805" y1="355" x2="831" y2="355" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arrowfc)"/>
+
+  <!-- infra lineage: dashed box below b7, feeding up -->
+  <rect x="575" y="450" width="230" height="80" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="690" y="474" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">VM: byggd i S7/S8</text>
+  <text x="690" y="492" text-anchor="middle" font-size="11" fill="#1e40af">för hand eller terraform apply</text>
+  <text x="690" y="508" text-anchor="middle" font-size="11" fill="#1e40af">Docker via S7 för hand / S8 cloud-init</text>
+  <line x1="690" y1="450" x2="690" y2="412" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrowfcdash)"/>
+
+  <text x="55" y="537" font-size="13" font-style="italic" fill="#374151">Varje pil ovan är en session ni redan klarat — idag kopplas de ihop, utan handpåläggning.</text>
+</svg>
