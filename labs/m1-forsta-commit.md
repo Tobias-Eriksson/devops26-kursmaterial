@@ -9,7 +9,7 @@ inbjuden som collaborator och GitHub-länken inlämnad på itslearning under
 **"Milstolpe 1"**.
 
 Repot ni skapar idag är **samma repo ni jobbar i hela kursen** — det ni
-demo:ar på demodagen i oktober är en direkt fortsättning på det ni gör nu.
+lämnar in som final i oktober är en direkt fortsättning på det ni gör nu.
 Behandla det därefter.
 
 ## Steg 0 – Kontokoll
@@ -195,7 +195,7 @@ Haka):
 
 **Klart när:** båda kan logga in på <https://pouta.csc.fi> med Haka och
 se **samma** projekt, och båda ser varandra i projektets medlemslista i
-MyCSC. Det är exakt det ni verifierar i M7 (steg 11).
+MyCSC. Det är förkravet för M7 (steg 0).
 
 Fastnar ni — projektansökan avslås, cPouta-accessen dröjer, inbjudan
 funkar inte — säg till läraren **direkt**, det är ett administrativt

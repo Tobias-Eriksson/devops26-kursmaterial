@@ -15,7 +15,7 @@ footer: "Från commit till produktion · Session 1 · ti 8.9.2026"
 ## Session 1 · Från commit till produktion
 
 Mjukvaruutvecklingsprocessen — DevOps
-Arcada · 8.9–20.10.2026
+Arcada · 8.9–28.10.2026
 
 ---
 
@@ -54,7 +54,7 @@ en kompis, eller köra lokalt och bara visa skärmen.
 
 ---
 
-## Kursresan: 12 sessioner, 9 milstolpar, 1 spår
+## Kursresan: 9 sessioner, 9 milstolpar
 
 ![width:1100px](assets/course-map.svg)
 
@@ -63,7 +63,7 @@ Arbete som inte syns i repot dokumenteras kort i `inlamning/`.
 
 ---
 
-## Betyg (max 110 p): M1–M9 är grunden, final task ger höjden
+## Betyg (max 109 p): M1–M9 är hela grunden, bonusen ger höjden
 
 <style scoped>
 section { font-size: 27px; }
@@ -71,22 +71,22 @@ section { font-size: 27px; }
 
 | Del | Poäng |
 |---|---|
-| Milstolpar M1–M9 | 0–9 p per milstolpe (helhetsbedömning) = max **81** |
-| Final task (valt spår A/B/C) | 0–19 p — fungerande demo, robusthet, dokumentation, demofrågor |
-| **Kärnsumma** | **100** |
+| Milstolpar M1–M9 | 0–11 p per milstolpe (helhetsbedömning) = max **99** |
 | Bonus: repo-hygien, commit-historik, PR-disciplin, fungerande kedja | **+10** |
-| **Max** | **110** |
+| **Max** | **109** |
 
 **Betygsgränser:** 0–50 Underkänt · 51–60 = 1 · 61–70 = 2 · 71–80 = 3 · 81–90 = 4 · 91+ = 5
+
+Tumregel: en fullt genomförd milstolpe ≈ ett betygssteg (t.o.m. M6 = 66 p = 2, t.o.m. M8 = 88 p = 4, alla nio = 99 p = 5).
 
 ---
 
 ## Hårda krav utöver poängen
 
-- Godkänt kräver **minst 51 p OCH individuell reflektion** (~1 sida)
-- Betyg **5** kräver final task med **fungerande live-demo** — demon hålls som **individuellt bokade 30-minuterspass** i slutet av kursen
+- Godkänt kräver **minst 51 p OCH individuell reflektion** (~1 sida, `inlamning/REFLEKTION.md`)
+- Hård slutdeadline för allt (M1–M9 med milstolpsbevis + reflektionen): **ons 28.10 23:59** — repot bedöms från to 29.10
 
-*Utan final task med live-demo är taket alltså betyg 4 — oavsett poäng.*
+*Alla nio milstolpar klara + reflektionen inlämnad = klar med kursen.*
 
 ---
 
@@ -97,13 +97,13 @@ section { font-size: 27px; }
 - **PR-disciplin** — featurebranches, PR med review innan merge till main
 - **Fungerande kedja** — varje milstolpe har verifierbart bevis
 
-**Par är välkomna** (rekommenderas!) — men betyget är alltid **individuellt**: Git-historiken visar vem som gjort vad, och vid demon får **båda** frågor.
+**Par är välkomna** (rekommenderas!) — men betyget är alltid **individuellt**: Git-historiken visar vem som gjort vad, och milstolpsbevisen i `inlamning/` visar **var och en** sin del av kedjan, med namn.
 
 ---
 
 ## Praktiskt
 
-- **När:** 10 lektionstillfällen 8.9–9.10 · 165 min per pass · plus demodagarna 19–20.10 (bokat 30-minuterspass, ingen gemensam lektion)
+- **När:** 10 lektionstillfällen 8.9–9.10 · 165 min per pass · hård slutdeadline för allt ons 28.10 23:59 (inget demopass — repot bedöms)
 - **Var:** schema enligt Arcadas system — tider varierar (ti/to/fr/må)!
 - **Par eller solo:** par rekommenderas, bildas idag i labben
 - **Material:** kursens material-repo + itslearning; appen kommer från ett template-repo på GitHub
